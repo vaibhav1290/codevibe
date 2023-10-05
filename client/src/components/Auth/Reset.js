@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { auth, sendPasswordReset } from "../../firebase";
 
 import Container from '@mui/material/Container';
@@ -8,7 +8,6 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 function Reset() {
@@ -60,11 +59,11 @@ function Reset() {
 
         <Grid container>
             <Grid item xs>
-              <Link href="/" variant="body2">Already have an account?</Link>
+              <Link to="/" style={{ textDecoration: 'none' }}>Already have an account?</Link>
             </Grid>
 
             <Grid item>
-              <Link href="/register" variant="body2">Don't have an account?</Link>
+              <Link to="/register" style={{ textDecoration: 'none' }}>Don't have an account?</Link>
             </Grid>
           </Grid>
        </Box>
