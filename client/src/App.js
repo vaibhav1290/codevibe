@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./components/Auth/Login/Login";
-import Register from "./components/Auth/Signup/Register";
-import Reset from "./components/Auth/Reset/Reset";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
+import Reset from "./components/Auth/Reset";
 import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
