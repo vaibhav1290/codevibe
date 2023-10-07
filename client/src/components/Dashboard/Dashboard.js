@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import "./Dashboard.css";
 import { auth, db, logout } from "../../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Button from '@mui/material/Button';
@@ -34,7 +33,6 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard__container">
-        Logged in as
         <div>{name}</div>
         <div>{user?.email}</div>
         <Button variant="contained" onClick={logout}>
