@@ -16,7 +16,6 @@
 .env
 .env.*
 package-lock.json
-firebase.js
 .firebaserc
 firebase.*
 

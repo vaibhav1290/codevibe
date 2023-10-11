@@ -75,15 +75,13 @@ function Dashboard() {
       >
         <Avatar
           src={user?.photoURL}
-          alt={name}
+          alt={name.charAt(0).toUpperCase()}
           sx={{
             width: 36,
             height: 36,
             border: (theme) => `solid 2px ${theme.palette.background.default}`,
           }}
-        >
-          {name.charAt(0).toUpperCase()}
-        </Avatar>
+        />
       </IconButton>
 
       <Popover
