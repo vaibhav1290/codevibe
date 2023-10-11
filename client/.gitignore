@@ -17,7 +17,7 @@
 .env.*
 package-lock.json
 firebase.js
-.firebase
+.firebaserc
 firebase.*
 
 npm-debug.log*
