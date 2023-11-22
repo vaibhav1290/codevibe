@@ -7,12 +7,12 @@ import {
   signInWithGoogle,
 } from "../../firebase";
 
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -33,20 +33,20 @@ function Register() {
 
   return (
     <Container component="main" maxWidth="xs">
-       <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-           <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
+      <Box
+        sx={{
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Typography component="h1" variant="h5">
+          Sign up
+        </Typography>
 
-          <Box component="form" sx={{ mt: 3 }}>
-            <TextField
+        <Box component="form" sx={{ mt: 3 }}>
+          <TextField
             margin="normal"
             autoComplete="name"
             name="name"
@@ -57,9 +57,9 @@ function Register() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             autoFocus
-            />
-            
-            <TextField
+          />
+
+          <TextField
             margin="normal"
             required
             fullWidth
@@ -69,9 +69,9 @@ function Register() {
             autoComplete="email"
             onChange={(e) => setEmail(e.target.value)}
             autoFocus
-            />
+          />
 
-            <TextField
+          <TextField
             margin="normal"
             required
             fullWidth
@@ -82,37 +82,41 @@ function Register() {
             autoComplete="new-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            />
-            
-            <Button
-            fullWidth
-            variant="contained"
-            sx={{mt: 3, mb: 2}}
-            onClick={register}>
-              Register
-            </Button>
+          />
 
-            <Button
+          <Button
             fullWidth
             variant="contained"
-            sx={{mt: 3, mb:2}}
+            sx={{ mt: 3, mb: 2 }}
+            onClick={register}
+          >
+            Register
+          </Button>
+
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
             onClick={signInWithGoogle}
-            >
-              Register with Google
-            </Button>
+          >
+            Register with Google
+          </Button>
 
-            <Grid 
+          <Grid
             container
             direction="column"
             alignItems="center"
-            justifyContent="center">
-              <Grid item xs-4>
-                <Link to="/" style={{ textDecoration: 'none' }}>Already have an account?</Link>
-              </Grid>
+            justifyContent="center"
+          >
+            <Grid item xs-4>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                Already have an account?
+              </Link>
             </Grid>
-          </Box>
+          </Grid>
         </Box>
-      </Container>
+      </Box>
+    </Container>
   );
 }
 

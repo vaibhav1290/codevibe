@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../firebase";
+import {
+  auth,
+  logInWithEmailAndPassword,
+  signInWithGoogle,
+} from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -26,63 +30,72 @@ function Login() {
   return (
     <Container component="main" maxWidth="xs">
       <Box
-      sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Typography component="h1" variant="h5">
-            Login
-          </Typography>
+        sx={{
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Typography component="h1" variant="h5">
+          Login
+        </Typography>
         <Box component="form" sx={{ mt: 1 }}>
           <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="email"
-          label="Email Address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          autoComplete="email"
-          autoFocus
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
+            autoFocus
           />
-          
+
           <TextField
-          margin="normal"
-          required
-          fullWidth
-          id="password"
-          label="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+            margin="normal"
+            required
+            fullWidth
+            id="password"
+            label="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <Button
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-          onClick={() => logInWithEmailAndPassword(email, password)}
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            onClick={() => logInWithEmailAndPassword(email, password)}
           >
             Login
           </Button>
 
           <Button
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-          onClick={signInWithGoogle}>
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+            onClick={signInWithGoogle}
+          >
             Login with Google
           </Button>
 
           <Grid container>
             <Grid item xs>
-              <Link to="/reset" style={{ textDecoration: 'none' }}>Forgot password?</Link>
+              <Link to="/reset" style={{ textDecoration: "none" }}>
+                Forgot password?
+              </Link>
             </Grid>
 
             <Grid item>
-              <Link to="/register" variant="body2" style={{ textDecoration: 'none' }}>Don't have an account?</Link>
+              <Link
+                to="/register"
+                variant="body2"
+                style={{ textDecoration: "none" }}
+              >
+                Don't have an account?
+              </Link>
             </Grid>
           </Grid>
         </Box>
