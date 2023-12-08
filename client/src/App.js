@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import Reset from "./components/Auth/Reset";
-import Dashboard from "./components/Dashboard/Dashboard";
-import ExportEditor from "./components/Editor/ExportEditor";
+import Home from "./components/Home/Home";
+import CodeEditor from "./components/Editor/CodeEditor";
+import Chat from "./components/Chat/Chat";
+import Meeting from "./components/Meeting/Meeting";
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
-          <Route exact path="/editor" element={<ExportEditor />} />
+          <Route exact path="/editor" element={<CodeEditor />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/chat" element={<Chat />} />
+          <Route exact path="/meeting" element={<Meeting />} />
         </Routes>
       </Router>
     </div>
