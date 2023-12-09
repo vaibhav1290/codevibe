@@ -10,7 +10,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import Peer from "simple-peer";
 import io from "socket.io-client";
 
-const socket = io.connect("https://codevibe-backend.vercel.app");
+const socket = io.connect("https://backend-codevibe-3ke3.onrender.com");
 
 function Meeting() {
   const [me, setMe] = useState("");
