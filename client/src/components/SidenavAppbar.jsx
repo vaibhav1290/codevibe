@@ -26,7 +26,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { ImHome3 } from "react-icons/im";
 import { FaCode } from "react-icons/fa";
-import { FaUserGroup } from "react-icons/fa6";
 import { IoMenuSharp } from "react-icons/io5";
 import { IoChatbubble } from "react-icons/io5";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -295,7 +294,7 @@ export default function SidenavAppBar() {
                   <IoChatbubble />
                 </ListItemIcon>
                 <ListItemText
-                  primary="Chat"
+                  primary="Collab"
                   sx={{ opacity: open ? 1 : 0, color: "#0718C4" }}
                 />
               </ListItemButton>
@@ -325,35 +324,6 @@ export default function SidenavAppBar() {
                 </ListItemIcon>
                 <ListItemText
                   primary="Editor"
-                  sx={{ opacity: open ? 1 : 0, color: "#0718C4" }}
-                />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              disablePadding
-              sx={{ display: "block" }}
-              onClick={() => {
-                navigate("/meeting");
-              }}
-            >
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <FaUserGroup />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Meeting"
                   sx={{ opacity: open ? 1 : 0, color: "#0718C4" }}
                 />
               </ListItemButton>
