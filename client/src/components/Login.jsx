@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { auth, signInWithGoogle } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 function Login() {
@@ -43,14 +42,6 @@ function Login() {
           >
             Login with Google
           </Button>
-
-          <Grid container>
-            <Grid item xs>
-              <Link to="/reset" style={{ textDecoration: "none" }}>
-                Forgot password?
-              </Link>
-            </Grid>
-          </Grid>
         </Box>
       </Box>
     </Container>
