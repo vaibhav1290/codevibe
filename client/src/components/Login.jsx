@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import {
-  auth,
-  logInWithEmailAndPassword,
-  signInWithGoogle,
-} from "../../firebase";
+import { auth, signInWithGoogle } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
@@ -25,6 +18,7 @@ function Login() {
       return;
     }
     if (user) navigate("/home");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   return (
@@ -41,37 +35,6 @@ function Login() {
           Login
         </Typography>
         <Box component="form" sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            autoComplete="email"
-            autoFocus
-          />
-
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="password"
-            label="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-            onClick={() => logInWithEmailAndPassword(email, password)}
-          >
-            Login
-          </Button>
-
           <Button
             fullWidth
             variant="contained"
@@ -85,16 +48,6 @@ function Login() {
             <Grid item xs>
               <Link to="/reset" style={{ textDecoration: "none" }}>
                 Forgot password?
-              </Link>
-            </Grid>
-
-            <Grid item>
-              <Link
-                to="/register"
-                variant="body2"
-                style={{ textDecoration: "none" }}
-              >
-                Register
               </Link>
             </Grid>
           </Grid>
