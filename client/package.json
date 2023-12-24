@@ -17,6 +17,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@twemoji/api": "^15.0.2",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "add": "^2.0.6",
     "codemirror": "^5.65.1",
     "dateformat": "^5.0.3",
