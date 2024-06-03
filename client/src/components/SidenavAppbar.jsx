@@ -245,35 +245,6 @@ export default function SidenavAppBar() {
               disablePadding
               sx={{ display: "block" }}
               onClick={() => {
-                navigate("/home");
-              }}
-            >
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  <ImHome3 />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Home"
-                  sx={{ opacity: open ? 1 : 0, color: "#0718C4" }}
-                />
-              </ListItemButton>
-            </ListItem>
-            <ListItem
-              disablePadding
-              sx={{ display: "block" }}
-              onClick={() => {
                 navigate("/chat");
               }}
             >
