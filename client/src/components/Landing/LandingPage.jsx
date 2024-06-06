@@ -35,6 +35,17 @@ function LandingPage() {
   const imgContainerRef = useRef();
 
   useEffect(() => {
+    let i = 0;
+    setInterval(() => {
+      imgContainerRef.current.scrollTo({
+        left: i * 600,
+        behavior: "smooth",
+      });
+      i = (i + 1) % 3;
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
     const values = ["Code", "Connect", "Brainstorm"];
     const valContainer = valRef.current;
 
@@ -71,8 +82,6 @@ function LandingPage() {
     if (user) navigate("/chat");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
-
-  useEffect(() => {}, []);
 
   return (
     <div className={classes.root}>
